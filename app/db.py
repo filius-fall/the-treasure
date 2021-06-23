@@ -1,4 +1,4 @@
-import redis
+import redis as Rds
 import os
 from dotenv import load_dotenv
 
@@ -9,7 +9,7 @@ DB_PORT = os.getenv('dB_PORT')
 DB_NO = os.getenv('DB_NO')
 
 def init_db():
-    db = redis.StrictRedis(
+    db = Rds.StrictRedis(
         host=DB_HOST,
         port=DB_PORT,
         db=DB_NO
