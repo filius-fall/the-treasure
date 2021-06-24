@@ -8,7 +8,7 @@
   </form>
   {% for post in posts %}
     <li class="tweet">
-      {{ post.username }} at {{ post.ts }}
+      {{ post.username | string }} at {{ post.ts }}
       {{ post.text }}
     </li>
   {% else %}
