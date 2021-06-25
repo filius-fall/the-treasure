@@ -1,4 +1,5 @@
 import json
+import redis
 
 api_json_values = [
     {
@@ -14,3 +15,11 @@ api_json_values = [
         'descryption' : 'This link is for using API with Flask'
     }
 ]
+
+
+external_data = {
+    'id' : 0,
+    'title' : '',
+    'url' : '',
+    'descryption' : ''
+}
