@@ -1,7 +1,14 @@
+import os
+
 from flask import Flask,request,jsonify,render_template,g
 import requests
 from .api_data import api_json_values,external_data
 from .db import get_db
+from dotenv import load_dotenv
+
+load_dotenv()
+
+PASSWORD = os.getenv('PASSWORD')
 
 import json
 
@@ -38,7 +45,7 @@ def api_all():
 
 @app.route('/api/v2/til_page',methods=["POST"])
 def external_data_post():
-    if 'password'  not in request.args or request.args['password'] != 'password':
+    if 'password'  not in request.args or request.args['password'] != PASSWORD:
         return "You are not authorised"
 
     request_data = request.get_json()
